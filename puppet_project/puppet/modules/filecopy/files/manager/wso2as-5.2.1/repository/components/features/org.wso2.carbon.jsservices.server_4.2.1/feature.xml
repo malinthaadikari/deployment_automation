@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<feature id="org.wso2.carbon.jsservices.server" label="WSO2 Carbon - Javascript Service Hosting Server Feature" provider-name="%providerName" version="4.2.1">
+  <description>This feature contains backend bundles required to deploy Javascript Service</description>
+  <copyright>%copyright</copyright>
+  <license url="%licenseURL">%license</license>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.request" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.registry" unpack="false" version="4.2.1"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.file" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.system" unpack="false" version="4.2.1"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.scraper" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.im-wrapper.core" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.wsrequest" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.jsservices.admin" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.feed" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.sparql" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.messagereceiver" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.im-wrapper.oscar" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.hostobject-service" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.im-wrapper.msn" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.im" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.atom" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.jsservices.custom-ui" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.request-processors.template" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.im-wrapper.yahoo" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.session" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.jsservices" unpack="false" version="4.2.1"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.email" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.javascript.hostobjects.httpclient" unpack="false" version="4.2.0"/>
+  <plugin id="org.wso2.carbon.mashup.im-wrapper.jabber" unpack="false" version="4.2.0"/>
+  <require>
+    <import match="equivalent" plugin="joscar-client" version="2007.11.10.wso2v1"/>
+    <import match="equivalent" plugin="js" version="1.7.0.R1-wso2v2"/>
+    <import match="equivalent" plugin="socks" version="1.01.0.wso2v1"/>
+    <import match="equivalent" plugin="saxon" version="8.9.0.wso2v2"/>
+    <import match="equivalent" plugin="webharvest-core" version="2.0.0.wso2v1"/>
+    <import match="equivalent" plugin="com.google.gson" version="2.1"/>
+    <import match="equivalent" plugin="cindy" version="2.4.4.wso2v1"/>
+    <import match="equivalent" plugin="jdom" version="1.0.0.wso2v1"/>
+    <import match="equivalent" plugin="abdera-extensions" version="0.4.0.wso2v2"/>
+    <import match="equivalent" plugin="rampart-core" version="1.6.1.wso2v10"/>
+    <import match="equivalent" plugin="joscar-common" version="2007.11.10.wso2v1"/>
+    <import match="equivalent" plugin="jml" version="1.0.0.b3-wso2v1"/>
+    <import match="equivalent" plugin="arq" version="1.0.0.wso2v1"/>
+    <import match="equivalent" plugin="jettison" version="1.3.4.wso2v1"/>
+    <import match="equivalent" plugin="joscar-protocol" version="2007.11.10.wso2v1"/>
+    <import match="equivalent" plugin="smackx" version="3.0.4.wso2v1"/>
+    <import match="equivalent" plugin="wss4j" version="1.5.11.wso2v1"/>
+    <import match="equivalent" plugin="rampart-trust" version="1.6.1.wso2v10"/>
+    <import match="equivalent" plugin="axiom-e4x" version="2.0.1.wso2v1"/>
+    <import match="equivalent" plugin="rome" version="0.9.0.wso2v1"/>
+    <import match="equivalent" plugin="smack" version="3.0.4.wso2v1"/>
+    <import match="equivalent" plugin="axis2-json" version="1.6.1.wso2v1"/>
+    <import match="equivalent" plugin="org.jaggeryjs.scriptengine" version="0.9.0.ALPHA4_wso2v1"/>
+    <import match="equivalent" plugin="rampart-policy" version="1.6.1.wso2v10"/>
+    <import match="equivalent" plugin="htmlcleaner" version="2.1.0.wso2v1"/>
+    <import match="equivalent" plugin="bsh" version="1.3.0.wso2v1"/>
+    <import feature="org.wso2.carbon.core.common" match="equivalent" version="4.2.0"/>
+    <import feature="org.wso2.carbon.ntask.core" match="equivalent" version="4.2.1"/>
+    <import feature="org.wso2.carbon.jsservices.common" match="equivalent" version="4.2.0"/>
+    <import feature="org.wso2.carbon.service.mgt.server" match="equivalent" version="4.2.1"/>
+  </require>
+</feature>

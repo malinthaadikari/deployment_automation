@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<feature id="org.wso2.carbon.application.deployer.mashup" label="WSO2 Carbon - Mashup Application Deployer Feature" provider-name="%providerName" version="4.2.0">
+  <description>This feature contains the core bundles required for Mashup cApp deployment functionality</description>
+  <copyright>%copyright</copyright>
+  <license url="%licenseURL">%license</license>
+  <plugin id="org.wso2.carbon.application.deployer.mashup" unpack="false" version="4.2.0"/>
+</feature>

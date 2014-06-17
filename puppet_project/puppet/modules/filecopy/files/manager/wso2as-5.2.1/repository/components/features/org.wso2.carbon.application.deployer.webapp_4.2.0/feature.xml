@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<feature id="org.wso2.carbon.application.deployer.webapp" label="WSO2 Carbon - Webapp Application Deployer Feature" provider-name="%providerName" version="4.2.0">
+  <description>This feature contains the core bundles required for webapp deployment through cApps</description>
+  <copyright>%copyright</copyright>
+  <license url="%licenseURL">%license</license>
+  <plugin id="org.wso2.carbon.application.deployer.webapp" unpack="false" version="4.2.0"/>
+</feature>
