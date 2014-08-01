@@ -1,0 +1,36 @@
+<nodes>
+    <node id ='AS_standalone_node1' type='standalone'>
+        <physicalNodeInfo>
+            <host>172.16.6.132</host>
+            <username>ubuntu</username>
+            <password>abc</password>
+            <javahome>/home/malintha/jdk1.6.0</javahome>
+        </physicalNodeInfo>
+        <product name='as' version='5.2.1' />
+        <congfigurations>
+            <config id='axis2' fileName='axis2.xml' location='/home/ubuntu/deployment/wso2as-5.2.1/repository/conf/axis2'>
+                <httpPort>9767</httpPort>
+            </config>
+            <config id='carbon' fileName='carbon.xml' location='/home/ubuntu/deployment/wso2as-5.2.1/repository/conf'>
+                <portOffset>4</portOffset>
+            </config>
+        </congfigurations>
+    </node>
+    <node id ='AS_standalone_node2' type='standalone'>
+        <physicalNodeInfo>
+            <host>172.16.6.133</host>
+            <username>ubuntu</username>
+            <password>abc</password>
+            <javahome>/home/ubuntu/jdk1.6.0</javahome>
+        </physicalNodeInfo>
+        <product name='as' version='5.2.1' />
+        <congfigurations>
+            <config id='axis2' fileName='axis2.xml' location='/home/ubuntu/deployment/wso2as-5.2.1/repository/conf/axis2'>
+                <httpPort>9765</httpPort>
+            </config>
+            <config id='carbon' fileName='carbon.xml' location='/home/ubuntu/deployment/wso2as-5.2.1/repository/conf'>
+                <portOffset>2</portOffset>
+            </config>
+        </congfigurations>
+    </node>
+</nodes>
