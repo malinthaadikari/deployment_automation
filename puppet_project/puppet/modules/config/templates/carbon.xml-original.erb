@@ -1,0 +1,22 @@
+<% require "rexml/document" %>
+<% doc = REXML::Document.new @configurations %>
+<% root_node = doc.elements["configurations/nodes/node[@type='loadBalancer']/domainname"].text %>
+<%= root_node %>
+
+Some stuff with <%= @employees %>
+<Offset><%= @portoffset %></Offset>
+
+<% @datasourcesinfo.each do |val| -%>
+Some stuff with <%= val %>
+<% end -%>
+
+<% require 'json'
+   JSON.parse(@malinthas).each do |person| -%>
+<%= person[0]['colors']%>
+<% end -%>
+
+<% require 'json'
+   obj=JSON.parse(@malinthas) -%>
+<% obj['colors'].each do |color| -%>
+ <%= color['colorName'] %>
+<% end -%>
