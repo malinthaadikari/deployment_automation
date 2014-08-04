@@ -12,7 +12,11 @@ conn = boto.connect_ec2(aws_access_key_id="b316892146764b44b20ee881e242d5de",
                                 path="/services/Cloud")
 i=0
 instanceList=[]
+
+#get the configurations details of the deployment
 doc = libxml2.parseFile('configuration.xml')
+
+#creating instaces one by one
 for node in doc.xpathEval("//node"):
         xmlstring = node.serialize('UTF-8', 1).replace('\n', '')
         f = open('/tmp/configdata','w')
@@ -24,4 +28,16 @@ for node in doc.xpathEval("//node"):
      	      print (instanceList[i].instances[0]).update()
      	      time.sleep(2)
         print (instanceList[i].instances[0]).ip_address
+
+        #we shutdown the instance just after create it to avoid running the puppet deamon
+	instanceID=(instanceList[i].instances[0]).id
+	conn.stop_instances(instance_ids=[instanceID])
         i=i+1
+
+#we turn on all the machines after creating all instances
+time.sleep(10)
+j=0;
+while(j<len(instanceList)):
+	instance = conn.get_all_instances(instance_ids=[(instanceList[j].instances[0]).id])
+	instance[0].instances[0].start()
+	j=j+1
