@@ -1,0 +1,30 @@
+<nodes>
+        <node id ="AS_standalone_node1" type="standalone">
+        <product name="as" version="5.2.1" />
+        <congfigurations>
+            <config id="axis2" fileName="axis2.xml" location="/home/ubuntu/deployment/wso2as-5.2.1/repository/conf/axis2">
+                <httpPort>9767</httpPort>
+                <localMemberIP>{AS_standalone_node1}</localMemberIP>
+                <localMemberIP>{ESB_standalone_node}</localMemberIP>
+            </config>
+            <config id="carbon" fileName="carbon.xml" location="/home/ubuntu/deployment/wso2as-5.2.1/repository/conf">
+                <portOffset>0</portOffset>
+            </config>
+        </congfigurations>
+        <serverOptions>-DportOffset=2</serverOptions>
+    </node>
+    <node id ="ESB_standalone_node" type="standalone">
+        <product name="esb" version="4.8.0" />
+        <congfigurations>
+            <config id="axis2" fileName="axis2.xml" location="/home/ubuntu/deployment/wso2esb-4.8.0/repository/conf/axis2">
+                <httpPort>9765</httpPort>
+            </config>
+            <config id="carbon" fileName="carbon.xml" location="/home/ubuntu/deployment/wso2esb-4.8.0/repository/conf">
+                <portOffset>2</portOffset>
+            </config>
+        </congfigurations>
+        <serverOptions>-DportOffset=2</serverOptions>
+    </node>
+</nodes>
+
+~        
