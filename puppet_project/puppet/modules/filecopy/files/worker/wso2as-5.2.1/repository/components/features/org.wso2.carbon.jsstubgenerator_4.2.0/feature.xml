@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<feature id="org.wso2.carbon.jsstubgenerator" label="WSO2 Carbon - Javascript Stub Generator Feature" provider-name="%providerName" version="4.2.0">
-  <description>This feature contains bundles required to generate Javascript stubs</description>
-  <copyright>%copyright</copyright>
-  <license url="%licenseURL">%license</license>
-  <includes id="org.wso2.carbon.jsstubgenerator.server" optional="false" version="4.2.0"/>
-  <includes id="org.wso2.carbon.jsstubgenerator.ui" optional="false" version="4.2.0"/>
-</feature>

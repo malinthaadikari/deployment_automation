@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<feature id="org.wso2.carbon.jsscraper" label="WSO2 Carbon - Javascript Web Scraping Feature" provider-name="%providerName" version="4.2.0">
-  <description>This feature contains bundles required to scrape web pages</description>
-  <copyright>%copyright</copyright>
-  <license url="%licenseURL">%license</license>
-  <includes id="org.wso2.carbon.jsscraper.server" optional="false" version="4.2.0"/>
-  <includes id="org.wso2.carbon.jsscraper.ui" optional="false" version="4.2.0"/>
-</feature>
