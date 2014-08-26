@@ -1,0 +1,258 @@
+<nodes>
+    <node id ="ZooKeeper1" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="zoo_ctg" fileName="zoo.cfg" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+            	<tickTime>500</tickTime>
+		<initLimit>10</initLimit>
+		<syncLimit>5</syncLimit>
+		<clientPort>2181</clientPort>
+		<clientPortAddress>{ZooKeeper1}</clientPortAddress>
+		<servers>
+			<server>{ZooKeeper1}</server>
+			<server>{ZooKeeper2}</server>
+			<server>{ZooKeeper3}</server>
+		</servers>
+            </config>
+	    
+        </congfigurations>
+	<create>
+                <file>
+                        <filename>myid</filename>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data/zookeeper</location>
+                        <content>1</content>
+                </file>
+                <folder>
+                        <name>zookeeper</name>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data</location>
+                </folder>
+        </create>
+
+        <serverOptions>-Dprofile=zookeeper</serverOptions>
+    </node>
+    <node id ="ZooKeeper2" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="zoo_ctg" fileName="zoo.cfg" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+               <tickTime>500</tickTime>
+                <initLimit>10</initLimit>
+                <syncLimit>5</syncLimit>
+                <clientPort>2181</clientPort>
+                <clientPortAddress>{ZooKeeper2}</clientPortAddress>
+                <servers>
+                        <server>{ZooKeeper1}</server>
+                        <server>{ZooKeeper2}</server>
+                        <server>{ZooKeeper3}</server>
+                </servers>
+            </config>
+	   
+        </congfigurations>
+	<create>
+                <file>
+                        <filename>myid</filename>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data/zookeeper</location>
+                        <content>2</content>
+                </file>
+                <folder>
+                        <name>zookeeper</name>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data</location>
+                </folder>
+        </create>
+        <serverOptions>-Dprofile=zookeeper</serverOptions>
+    </node>
+    <node id ="ZooKeeper3" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="zoo_ctg" fileName="zoo.cfg" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <tickTime>500</tickTime>
+                <initLimit>10</initLimit>
+                <syncLimit>5</syncLimit>
+                <clientPort>2181</clientPort>
+                <clientPortAddress>{ZooKeeper3}</clientPortAddress>
+                <servers>
+                        <server>{ZooKeeper1}</server>
+                        <server>{ZooKeeper2}</server>
+                        <server>{ZooKeeper3}</server>
+                </servers>
+            </config>
+        </congfigurations>
+	<create>
+                <file>
+                        <filename>myid</filename>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data/zookeeper</location>
+                        <content>3</content>
+                </file>
+                <folder>
+                        <name>zookeeper</name>
+                        <location>/home/ubuntu/deployment/wso2mb-2.2.0/repository/data</location>
+                </folder>
+        </create>
+        <serverOptions>-Dprofile=zookeeper</serverOptions> 
+    </node>
+    <node id ="Cassandra1" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <seeds>
+                        <seed>{Cassandra1}</seed>
+                        <seed>{Cassandra2}</seed>
+			<seed>{Cassandra3}</seed>
+			<seed>{Cassandra4}</seed>
+                </seeds>
+		<listenAddress>{Cassandra1}</listenAddress>
+		<rpcAddress>{Cassandra1}</rpcAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+    <node id ="Cassandra2" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+           	<seeds>
+			<seed>{Cassandra1}</seed>
+			<seed>{Cassandra2}</seed>
+			<seed>{Cassandra3}</seed>
+                        <seed>{Cassandra4}</seed>
+		</seeds>
+		<listenAddress>{Cassandra2}</listenAddress>
+		<rpcAddress>{Cassandra2}</rpcAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+     <node id ="Cassandra3" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <seeds>
+                        <seed>{Cassandra1}</seed>
+                        <seed>{Cassandra2}</seed>
+			<seed>{Cassandra3}</seed>
+                        <seed>{Cassandra4}</seed>
+                </seeds>
+                <listenAddress>{Cassandra3}</listenAddress>
+		<rpcAddress>{Cassandra3}</rpcAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+     <node id ="Cassandra4" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="cassandra_yaml" fileName="cassandra.yaml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/etc">
+                <seeds>
+                        <seed>{Cassandra1}</seed>
+                        <seed>{Cassandra2}</seed>
+			<seed>{Cassandra3}</seed>
+                        <seed>{Cassandra4}</seed>
+                </seeds>
+                <listenAddress>{Cassandra4}</listenAddress>
+		<rpcAddress>{Cassandra4}</rpcAddress>
+            </config>
+        </congfigurations>
+        <serverOptions>-Dprofile=cassandra</serverOptions>
+    </node>
+
+    <node id ="MessageBrokerNode1" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="andes_config" fileName="andes-config.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <clustering>
+                        <enabled>true</enabled>
+                        <externalCassandraServerRequired>true</externalCassandraServerRequired>
+                        <externalZookeeperServerRequired>true</externalZookeeperServerRequired>
+                        <coordination>
+                                <ZooKeeperConnection>{ZooKeeper1}</ZooKeeperConnection>
+                                <ZooKeeperConnection>{ZooKeeper2}</ZooKeeperConnection>
+				<ZooKeeperConnection>{ZooKeeper3}</ZooKeeperConnection>
+                        </coordination>
+                </clustering>
+            </config>
+            <config id="andes-virtualhosts" fileName="andes-virtualhosts.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <virtualhosts>
+                        <virtualhost>
+                                <store>
+                                        <connectionString>{Cassandra1}</connectionString>
+                                        <connectionString>{Cassandra2}</connectionString>
+					<connectionString>{Cassandra3}</connectionString>
+                                        <connectionString>{Cassandra4}</connectionString>
+                                </store>
+                                <advanced>
+                                        <replicationFactor>2</replicationFactor>
+                                </advanced>
+                        </virtualhost>
+                </virtualhosts>
+            </config>
+        </congfigurations>
+        <serverOptions></serverOptions>
+    </node>
+    <node id ="MessageBrokerNode2" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="andes_config" fileName="andes-config.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <clustering>
+                        <enabled>true</enabled>
+                        <externalCassandraServerRequired>true</externalCassandraServerRequired>
+                        <externalZookeeperServerRequired>true</externalZookeeperServerRequired>
+                        <coordination>
+                                <ZooKeeperConnection>{ZooKeeper1}</ZooKeeperConnection>
+                                <ZooKeeperConnection>{ZooKeeper2}</ZooKeeperConnection>
+				<ZooKeeperConnection>{ZooKeeper3}</ZooKeeperConnection>
+                        </coordination>
+                </clustering>
+            </config>
+            <config id="andes-virtualhosts" fileName="andes-virtualhosts.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <virtualhosts>
+                        <virtualhost>
+                                <store>
+                                        <connectionString>{Cassandra1}</connectionString>
+                                        <connectionString>{Cassandra2}</connectionString>
+					<connectionString>{Cassandra3}</connectionString>
+                                        <connectionString>{Cassandra4}</connectionString>
+                                </store>
+                                <advanced>
+                                        <replicationFactor>2</replicationFactor>
+                                </advanced>
+                        </virtualhost>
+                </virtualhosts>
+            </config>
+        </congfigurations>
+        <serverOptions></serverOptions>
+    </node>
+    <node id ="MessageBrokerNode3" type="standalone">
+        <product name="mb" version="2.2.0" />
+        <congfigurations>
+            <config id="andes_config" fileName="andes-config.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <clustering>
+                        <enabled>true</enabled>
+                        <externalCassandraServerRequired>true</externalCassandraServerRequired>
+                        <externalZookeeperServerRequired>true</externalZookeeperServerRequired>
+                        <coordination>
+                                <ZooKeeperConnection>{ZooKeeper1}</ZooKeeperConnection>
+                                <ZooKeeperConnection>{ZooKeeper2}</ZooKeeperConnection>
+				<ZooKeeperConnection>{ZooKeeper3}</ZooKeeperConnection>
+                        </coordination>
+                </clustering>
+            </config>
+            <config id="andes-virtualhosts" fileName="andes-virtualhosts.xml" location="/home/ubuntu/deployment/wso2mb-2.2.0/repository/conf/advanced">
+                <virtualhosts>
+                        <virtualhost>
+                                <store>
+                                        <connectionString>{Cassandra1}</connectionString>
+                                        <connectionString>{Cassandra2}</connectionString>
+					<connectionString>{Cassandra3}</connectionString>
+                                        <connectionString>{Cassandra4}</connectionString>
+                                </store>
+                                <advanced>
+                                        <replicationFactor>2</replicationFactor>
+                                </advanced>
+                        </virtualhost>
+                </virtualhosts>
+            </config>
+        </congfigurations>
+        <serverOptions></serverOptions>
+    </node>
+
+</nodes>
+
