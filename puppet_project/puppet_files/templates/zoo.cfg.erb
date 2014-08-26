@@ -1,0 +1,12 @@
+<% require "rexml/document" -%>
+<% doc = REXML::Document.new @allConfigurations['configurations'] -%>
+<% counter = 1 %>
+tickTime=<%= doc.elements["node/congfigurations/config[@id='zoo_ctg']/tickTime"].text %>
+dataDir=repository/data/zookeeper
+clientPort=<%= doc.elements["node/congfigurations/config[@id='zoo_ctg']/clientPort"].text %>
+start_zk_server=true
+initLimit=<%= doc.elements["node/congfigurations/config[@id='zoo_ctg']/initLimit"].text %>
+syncLimit=<%= doc.elements["node/congfigurations/config[@id='zoo_ctg']/syncLimit"].text %>
+clientPortAddress=<%= doc.elements["node/congfigurations/config[@id='zoo_ctg']/clientPortAddress"].text %>
+<%doc.elements.each("node/congfigurations/config[@id='zoo_ctg']/servers/server") { |element| %>server.<%=counter %>=<%=element.text %>:2888:3888
+<% counter = counter +1  } %>

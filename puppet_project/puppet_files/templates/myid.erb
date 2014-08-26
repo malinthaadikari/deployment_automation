@@ -1,0 +1,3 @@
+<% require "rexml/document" -%>
+<% doc = REXML::Document.new @allConfigurations['configurations'] -%>
+<%= doc.elements["node/congfigurations/config[@id='myid']/id"].text %>

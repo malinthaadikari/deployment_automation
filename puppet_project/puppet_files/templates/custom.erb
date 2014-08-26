@@ -1,0 +1,4 @@
+<% require "rexml/document" -%>
+<% doc = REXML::Document.new @allConfigurations['configurations'] -%>
+<%= doc.elements["node/create/file/content"].text %>
+
